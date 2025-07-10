@@ -1,9 +1,22 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/Dito-7/mrt-schedules-golang/modules/station"
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	var router = gin.Default()
+	InitiateRouter()
+}
+
+func InitiateRouter() {
+	var (
+		router = gin.Default()
+		api    = router.Group("/v1/api")
+	)
+
+	station.Initiate(api)
 
 	router.Run(":8080") // Start the server on port 8080
+
 }
