@@ -17,6 +17,6 @@ func InitiateRouter() {
 
 	station.Initiate(api)
 
-	router.Run(":8080") // Start the server on port 8080
+	router.Run(":8080")
 
 }
